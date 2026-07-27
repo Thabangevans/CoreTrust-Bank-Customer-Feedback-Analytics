@@ -383,6 +383,40 @@ CoreTrust-Bank-Customer-Feedback-Analytics/
 
 ---
 
+# 🛠 Challenges & Solutions
+
+Throughout the development of this project, several technical challenges were encountered. Each issue provided an opportunity to improve the overall solution and strengthen the reliability of the ETL pipeline.
+
+| Challenge | Solution |
+|-----------|----------|
+| Google Apps Script authorization and permissions prevented the automation from running initially. | Configured the required Google permissions, authorized the script, and verified successful execution through the Apps Script editor. |
+| Ensuring reliable data transfer from Google Forms to the cloud database. | Developed an automated ETL process using Google Apps Script to validate, transform, and send data to Supabase through the REST API. |
+| Preventing duplicate records during warehouse loading. | Implemented SQL `NOT EXISTS` checks within the ETL stored procedure to ensure each submission was loaded only once. |
+| Keeping track of processed and unprocessed records. | Added `processed` and `processed_at` fields to the staging table and updated them automatically after successful warehouse loading. |
+| Designing an efficient analytical database structure. | Implemented a Star Schema consisting of dimension tables and a centralized fact table to improve query performance and simplify reporting. |
+| Connecting Power BI to Supabase. | Installed the PostgreSQL ODBC driver, configured the connection correctly, and resolved SSL certificate and connectivity issues. |
+| Power BI refresh failures caused by cyclic reference errors. | Identified and removed problematic relationships and refreshed the data model successfully. |
+| Automating warehouse population. | Created a PostgreSQL stored procedure and trigger to automatically load dimension and fact tables whenever new staging records were inserted. |
+| Maintaining consistent dashboard metrics. | Developed DAX measures to calculate KPIs dynamically, ensuring dashboards reflected the latest warehouse data after refresh. |
+| Creating a professional dashboard layout. | Applied a modern dark-themed design with KPI cards, interactive slicers, navigation, and responsive visual placement for improved usability. |
+
+---
+
+### Key Lessons Learned
+
+This project strengthened practical experience in:
+
+- Designing and implementing ETL pipelines.
+- PostgreSQL database development and SQL optimization.
+- Star Schema dimensional modelling.
+- Cloud database deployment with Supabase.
+- Google Apps Script automation.
+- REST API integration.
+- Power BI dashboard development.
+- DAX measure creation.
+- Data warehouse automation using stored procedures and triggers.
+- Troubleshooting real-world data integration and reporting issues.
+
 # 🔮 Future Improvements
 
 - Scheduled Power BI refresh
