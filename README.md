@@ -300,7 +300,7 @@ Date --> Fact
 
 📌 Average Rating by Branch
 
-📌 Average Risk Score
+📌 Average Risk Score by Branch
 
 📌 Detailed Feedback Table
 
