@@ -52,8 +52,10 @@ and
 - [Key Performance Indicators](#-key-performance-indicators)
 - [Results](#-results)
 - [Repository Structure](#-repository-structure)
+- [Challenges & Solutions](#-challenges-solutions)
 - [Future Improvements](#-future-improvements)
 
+Challenges & Solutions
 ---
 
 # 📖 Project Overview
