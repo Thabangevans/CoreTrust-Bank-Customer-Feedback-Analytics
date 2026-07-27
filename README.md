@@ -52,7 +52,6 @@ and
 - [Key Performance Indicators](#-key-performance-indicators)
 - [Results](#-results)
 - [Repository Structure](#-repository-structure)
-- [Getting Started](#-getting-started)
 - [Future Improvements](#-future-improvements)
 
 ---
