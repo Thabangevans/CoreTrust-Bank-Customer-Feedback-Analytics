@@ -1,133 +1,75 @@
 -- ==========================================================
--- Load Customer Dimension
+-- CoreTrust Bank Data Warehouse
+-- Dimension Tables
 -- ==========================================================
 
-INSERT INTO warehouse.dim_customer
-(
-    first_name,
-    last_name,
-    email,
-    phone
-)
+--------------------------------------------------------------
+-- CUSTOMER DIMENSION
+--------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS warehouse.dim_customer (
 
-SELECT DISTINCT
+    customer_key SERIAL PRIMARY KEY,
 
-    first_name,
-    last_name,
-    email,
-    phone
+    first_name VARCHAR(100),
 
-FROM staging.customer_feedback_raw s
+    last_name VARCHAR(100),
 
-WHERE NOT EXISTS
-(
-    SELECT 1
-    FROM warehouse.dim_customer d
-    WHERE d.email = s.email
+    email VARCHAR(255) UNIQUE,
+
+    phone VARCHAR(30)
+
 );
 
+--------------------------------------------------------------
+-- BRANCH DIMENSION
+--------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS warehouse.dim_branch (
 
--- ==========================================================
--- Load Branch Dimension
--- ==========================================================
+    branch_key SERIAL PRIMARY KEY,
 
-INSERT INTO warehouse.dim_branch
-(
-    branch_name
-)
+    branch_name VARCHAR(150) UNIQUE
 
-SELECT DISTINCT
-
-    branch
-
-FROM staging.customer_feedback_raw s
-
-WHERE NOT EXISTS
-(
-    SELECT 1
-    FROM warehouse.dim_branch d
-    WHERE d.branch_name = s.branch
 );
 
+--------------------------------------------------------------
+-- SERVICE DIMENSION
+--------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS warehouse.dim_service (
 
--- ==========================================================
--- Load Service Dimension
--- ==========================================================
+    service_key SERIAL PRIMARY KEY,
 
-INSERT INTO warehouse.dim_service
-(
-    service_name
-)
+    service_name VARCHAR(150) UNIQUE
 
-SELECT DISTINCT
-
-    service
-
-FROM staging.customer_feedback_raw s
-
-WHERE NOT EXISTS
-(
-    SELECT 1
-    FROM warehouse.dim_service d
-    WHERE d.service_name = s.service
 );
 
+--------------------------------------------------------------
+-- ISSUE CATEGORY DIMENSION
+--------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS warehouse.dim_issue (
 
-INSERT INTO warehouse.dim_issue
-(
-    issue_category
-)
+    issue_key SERIAL PRIMARY KEY,
 
-SELECT DISTINCT
+    issue_category VARCHAR(150) UNIQUE
 
-    issue_category
-
-FROM staging.customer_feedback_raw s
-
-WHERE NOT EXISTS
-(
-    SELECT 1
-    FROM warehouse.dim_issue d
-    WHERE d.issue_category = s.issue_category
 );
 
+--------------------------------------------------------------
+-- DATE DIMENSION
+--------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS warehouse.dim_date (
 
--- ==========================================================
--- Load Date Dimension
--- ==========================================================
+    date_key DATE PRIMARY KEY,
 
-INSERT INTO warehouse.dim_date
-(
-    date_key,
-    year,
-    quarter,
-    month,
-    month_name,
-    day,
-    weekday
-)
+    year INTEGER,
 
-SELECT DISTINCT
+    quarter INTEGER,
 
-    DATE(submitted_at),
+    month INTEGER,
 
-    EXTRACT(YEAR FROM submitted_at),
+    month_name VARCHAR(20),
 
-    EXTRACT(QUARTER FROM submitted_at),
+    day INTEGER,
 
-    EXTRACT(MONTH FROM submitted_at),
+    weekday VARCHAR(20)
 
-    TO_CHAR(submitted_at,'Month'),
-
-    EXTRACT(DAY FROM submitted_at),
-
-    TO_CHAR(submitted_at,'Day')
-
-FROM staging.customer_feedback_raw s
-
-WHERE NOT EXISTS
-(
-    SELECT 1
-    FROM warehouse.dim_date d
-    WHERE d.date_key = DATE(s.submitted_at)
 );
