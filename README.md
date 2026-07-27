@@ -13,7 +13,7 @@ An End-to-End Business Intelligence Solution built with
 <b>Supabase PostgreSQL</b>,
 <b>SQL</b>,
 <b>ETL</b>,
-<b>Data Warehousing</b>,
+<b>Data Warehousing</b>
 and
 <b>Power BI</b>.
 </p>
