@@ -373,36 +373,14 @@ CoreTrust-Bank-Customer-Feedback-Analytics/
 
 ├── README.md
 
-├── docs/
+├── Architecture Diagram/
 
 ├── sql/
 
 ├── apps-script/
 
-├── powerbi/
-
-└── images/
+└── powerbi/
 ```
-
----
-
-# 🚀 Getting Started
-
-1. Create the PostgreSQL database in Supabase.
-
-2. Execute the SQL scripts.
-
-3. Configure Google Forms.
-
-4. Deploy Google Apps Script.
-
-5. Configure the REST API.
-
-6. Submit sample customer feedback.
-
-7. Refresh the Power BI report.
-
-8. Explore the dashboards.
 
 ---
 
@@ -417,8 +395,6 @@ CoreTrust-Bank-Customer-Feedback-Analytics/
 - Email notifications
 
 - Machine Learning
-
-- Sentiment Analysis
 
 - Azure deployment
 
