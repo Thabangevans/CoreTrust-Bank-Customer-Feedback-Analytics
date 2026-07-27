@@ -1,0 +1,11 @@
+```mermaid
+flowchart TD
+    A[Customer] --> B[Google Form]
+    B --> C[Google Sheets]
+    C --> D[Google Apps Script]
+    D --> E[Supabase PostgreSQL]
+    E --> F[Staging]
+    F --> G[Warehouse ETL]
+    G --> H[Star Schema]
+    H --> I[Power BI Dashboard]
+```
