@@ -308,15 +308,15 @@ Date --> Fact
 
 # 📷 Dashboard Preview
 
-> *(Replace these placeholders with screenshots.)*
+<h2>📊 Executive Overview Dashboard</h2>
 
-```
-POWER BI/Executive Overview.png
-```
+<img src="POWER%20BI/Executive%20Overview%20Dashboard.png" width="900"/>
 
-```
-images/dashboard-page2.png
-```
+<h2>📈 Customer Insights & Operational Trends</h2>
+
+<img src="POWER%20BI/Customer%20Insights%20%26%20Operational%20Trends%20Dashboard.png" width="900"/>
+
+
 
 ---
 
