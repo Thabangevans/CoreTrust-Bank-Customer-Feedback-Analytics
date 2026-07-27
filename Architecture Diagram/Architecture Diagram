@@ -1,0 +1,37 @@
+## End-to-End System Architecture
+
+```mermaid
+flowchart LR
+
+A[Customer] --> B[Google Form]
+
+B --> C[Google Sheets]
+
+C --> D[Google Apps Script]
+
+D --> E[Data Validation]
+
+E --> F[Risk Score Calculation]
+
+F --> G[REST API]
+
+G --> H[Supabase PostgreSQL]
+
+H --> I[Staging Layer]
+
+I --> J[ETL Stored Procedure]
+
+J --> K[Data Warehouse]
+
+K --> L[Dimension Tables]
+
+K --> M[Fact Table]
+
+L --> N[Power BI]
+
+M --> N
+
+N --> O[Executive Dashboard]
+
+N --> P[Customer Insights Dashboard]
+```
