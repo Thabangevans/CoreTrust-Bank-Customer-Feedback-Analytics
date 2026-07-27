@@ -62,9 +62,9 @@ and
 
 This project demonstrates the design and implementation of a complete **Business Intelligence (BI)** solution for a banking environment.
 
-The system automates the entire customer feedback lifecycle—from collecting responses through Google Forms to delivering executive dashboards in Microsoft Power BI.
+The system automates the entire customer feedback lifecycle from collecting responses through Google Forms to delivering executive dashboards in Microsoft Power BI.
 
-Instead of relying on spreadsheets and manual reporting, customer feedback is automatically processed through an ETL pipeline, stored in a cloud-hosted PostgreSQL database, transformed into a dimensional warehouse, and visualized through interactive dashboards that support business decision-making.
+Instead of relying on spreadsheets and manual reporting, customer feedback is automatically processed through an ETL pipeline, stored in a cloud-hosted PostgreSQL database, transformed into a dimensional warehouse and visualized through interactive dashboards that support business decision-making.
 
 ---
 
